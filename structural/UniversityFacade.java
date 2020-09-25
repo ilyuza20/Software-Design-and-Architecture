@@ -2,12 +2,12 @@ package structural;
 
 import java.util.Calendar;
 
-interface Univer {
+interface University {
     void entered();
     void expelled();
 }
 
-class Deanery implements Univer {
+class Deanery implements University {
 
     @Override
     public void entered() {
@@ -20,7 +20,7 @@ class Deanery implements Univer {
     }
 }
 
-class CampusDorm implements Univer {
+class CampusDorm implements University {
 
     @Override
     public void entered() {
@@ -33,7 +33,7 @@ class CampusDorm implements Univer {
     }
 }
 
-class FreeClinic implements Univer {
+class FreeClinic implements University {
 
     @Override
     public void entered() {
@@ -46,13 +46,13 @@ class FreeClinic implements Univer {
     }
 }
 
-class Facade1 {
+class Facade {
 
     private Deanery deanery;
     private CampusDorm campusDorm;
     private FreeClinic freeClinic;
 
-    public Facade1() {
+    public Facade() {
         deanery = new Deanery();
         campusDorm = new CampusDorm();
         freeClinic = new FreeClinic();
@@ -76,9 +76,9 @@ class Facade1 {
 
 public class UniversityFacade {
     public static void main(String[] args) {
-        Facade1 facade1 = new Facade1();
-        facade1.enterStudent();
+        Facade facade = new Facade();
+        facade.enterStudent();
         System.out.println();
-        facade1.expelStudent();
+        facade.expelStudent();
     }
 }
