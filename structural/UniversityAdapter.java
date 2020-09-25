@@ -1,43 +1,43 @@
 package structural;
 
-class Kzn {
+class KFU {
 
-    public void chooseKzn() {
+    public void chooseKFU() {
         System.out.println("You have chosen Kazan Federal University.University! Congrats!");
     }
 }
 
-class Msc {
+class MSU {
 
-    public void chooseMsc() {
+    public void chooseMSU() {
         System.out.println("You have chosen Moscow State University.University! Congrats!");
     }
 }
 
-class SPb {
+class SPbSU {
 
-    public void chooseSPb() {
+    public void chooseSPbSU() {
         System.out.println("You have chosen Saint Petersburg state University.University! Congrats!");
     }
 }
 
-class KznAdapter extends Kzn {
-    private Msc msc;
+class KFUAdapter extends KFU {
+    private MSU msu;
 
-    public KznAdapter (Msc msc) {
-        this.msc = msc;
+    public KFUAdapter (MSU msu) {
+        this.msu = msu;
     }
 
-    public void chooseKzn() {
-        msc.chooseMsc();
+    public void chooseKFU() {
+        msc.chooseMSU();
     }
 }
 
 public class UniversityAdapter {
     public static void main(String[] args) {
-        Kzn kfu = new Kzn();
-        kfu.chooseKzn();
-        Kzn msu = new KznAdapter(new Msc());
-        msu.chooseKzn();
+        KFU kfu = new KFU();
+        kfu.chooseKFU();
+        KFU msu = new KFUAdapter(new MSU());
+        msu.chooseKFU();
     }
 }
